@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title></title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <style type="text/css">
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         }
+         header {
+         width: 100%;
+         max-width: 1400px;
+         margin: 0 auto;
+         padding: 20px 0px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         }
+         header .logo-div a {
+         font-size: 30px;
+         font-weight: 700;
+         color: blue;
+         letter-spacing: 1px;
+         text-decoration: none;
+         }
+         header .menu-div ul li {
+         list-style: none;
+         display: inline-block;
+         padding: 0px 15px;
+         }
+         header .menu-div ul li:after {
+         content: "";
+         width: 0%;
+         height: 2px;
+         background-color: red;
+         display: block;
+         margin: auto;
+         margin-top: 3px;
+         transition: 0.5s;
+         }
+         header .menu-div ul li:hover:after {
+         width: 100%;
+         transition: 0.5s;
+         }
+         header .menu-div a {
+         font-size: 18px;
+         font-weight: 700;
+         letter-spacing: 1px;
+         text-decoration: none;
+         }
+         .toggler-icon,.close-icon {
+         display: none;
+         }
+         @media only screen and (max-width: 991px) {
+         header {
+         max-width: 540px;
+         padding-left: 15px;
+         padding-right: 15px;
+         }
+         .toggler-icon,.close-icon {
+         display: block;
+         }
+         .close-icon {
+         	text-align: right;
+         }
+         header .menu-div {
+         position: absolute;
+         top: 0;
+         /*right: -200px;*/
+         left: -200%;
+         height: 100vh;
+         background: red;
+         /*color: white;*/
+         width: 200px;
+         padding: 20px;
+         transition: 1s;
+         }
+         header .active-menu {
+         left: 0;
+         /*right: 0;*/
+         transition: 1s;
+         }
+         header .menu-div ul li {
+         display: block;
+         padding: 0px;
+         margin-top: 10px;
+         text-align: left;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <div class="logo-div">
+            <a href="#">
+            logo
+            </a>
+         </div>
+         <div class="menu-div">
+            <i class="fa fa-times close-icon" aria-hidden="true"></i>
+            <ul>
+               <li>
+                  <a href="">Home</a>
+               </li>
+               <li>
+                  <a href="">About Us</a>
+               </li>
+               <li>
+                  <a href="">Infrastructure</a>
+               </li>
+               <li>
+                  <a href="">Gallery</a>
+               </li>
+               <li>
+                  <a href="">Contact Us</a>
+               </li>
+            </ul>
+         </div>
+         <div class="toggler-icon">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+         </div>
+      </header>
+   </body>
+</html>
+
+<script type="text/javascript">
+	   $(document).ready(function() {
+        $(".toggler-icon").click(function() {
+            $(".menu-div").addClass("active-menu");
+        });
+        $(".close-icon").click(function() {
+            $(".menu-div").removeClass("active-menu");
+        });
+    });
+</script>
